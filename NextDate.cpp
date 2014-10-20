@@ -40,7 +40,7 @@ Date *NextDate(Date *argv)
 	ret->day = argv->day;
 
 
-	if(ret->day > maxDay || yearType==INVALID || monthType == INVALID)
+	if(ret->day > maxDay || ret->day < 1|| yearType==INVALID || monthType == INVALID)
         {
                 free(ret);
                 return NULL;

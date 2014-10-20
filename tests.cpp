@@ -82,7 +82,7 @@ TEST(EdgeTest, SmallMonthNormalYear)
         testNextDate( 1863 , 4, 1 , 1863, 4, 2);
         testNextDate( 1874 , 6, 2 , 1874, 6, 3);
         testNextDate( 1875 , 9, 30, 1875, 10, 1);
-        testNextDate( 1973 , 11, 30 , 1913, 12, 1);
+        testNextDate( 1973 , 11, 30 , 1973, 12, 1);
         testNextDate( 1974 , 9, 29 , 1974, 9, 30);
         testNextDate( 1975 , 6, 29, 1975, 6, 30);
 
@@ -148,7 +148,7 @@ TEST(EdgeTest, FebruaryNormalYear)
         testNextDate( 1973 , 2, 1 , 1973, 2, 2);
         testNextDate( 1975 , 2, 28 , 1975, 3, 1);
         testNextDate( 1977 , 2, 28 , 1977, 3, 1);
-	testNextDate( 1900 , 2, 28 , 1977, 3, 1);
+	testNextDate( 1900 , 2, 28 , 1900, 3, 1);
 
         //invalid testing
         testInvalid( 1833 , 2, 0);
@@ -206,7 +206,7 @@ TEST(EquivalentClassTest, BigMonthLeapYear)
 
 TEST(EdgeTest, BigMonthLeapYear)
 {
-        testNextDate( 1924 , 1, 3 , 1852, 1, 4);
+        testNextDate( 1924 , 1, 3 , 1924, 1, 4);
         testNextDate( 1856 , 3, 8 , 1856, 3, 9);
         testNextDate( 1860 , 5, 13 , 1860, 5, 14);
         testNextDate( 1864 , 7, 18 , 1864, 7, 19);
@@ -247,7 +247,7 @@ TEST(EdgeTest, FebruaryLeapYear)
         //invalid testing
         testInvalid( 2000 , 2, 30);
         testInvalid( 1936 , 2, 0);
-        testInvalid( 1980 , 2, 20);
+        testInvalid( 1980 , 2, 30);
 }
 
 int main(int argc, char **argv) {
