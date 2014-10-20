@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/bletchley/WorkSpace/2014_SoftwareTesting/NextDate/NextDate.cpp
+stdlib.h
+-
+NextDate.h
+/home/bletchley/WorkSpace/2014_SoftwareTesting/NextDate/NextDate.h
+
+/home/bletchley/WorkSpace/2014_SoftwareTesting/NextDate/NextDate.h
+stdio.h
+-
+

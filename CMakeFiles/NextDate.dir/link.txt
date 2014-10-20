@@ -1,0 +1,2 @@
+/usr/bin/ar cr libNextDate.a  CMakeFiles/NextDate.dir/NextDate.cpp.o
+/usr/bin/ranlib libNextDate.a

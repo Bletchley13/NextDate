@@ -1,0 +1,2 @@
+/home/bletchley/WorkSpace/2014_SoftwareTesting/NextDate/CMakeFiles/NextDate.dir
+/home/bletchley/WorkSpace/2014_SoftwareTesting/NextDate/CMakeFiles/runTests.dir
