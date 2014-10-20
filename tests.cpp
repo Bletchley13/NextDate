@@ -4,10 +4,14 @@
 void testNextDate(int preYear, int preMonth, int preDay, int nextYear, int nextMonth, int nextDay){
 	Date* a= NewDateInstance( preYear, preMonth, preDay);
 	Date* b= NextDate(a);
-	bool ret = checkDate(a, nextYear, nextMonth, nextDay);
-	free(a);
-	free(b);
-	EXPECT_TRUE(ret);
+	//bool ret = checkDate(b, nextYear, nextMonth, nextDay);
+	//free(a);
+	//free(b);
+	EXPECT_EQ(nextYear, b->year);
+	EXPECT_EQ(nextMonth, b->month);
+	EXPECT_EQ(nextDay, b->day);
+	//free(a);
+        //free(b);
 }
 
 void testInvalid(int preYear, int preMonth, int preDay){
@@ -22,7 +26,7 @@ TEST(BoundaryTest, Year) {
 	testNextDate( 1812, 1, 1 , 1812, 1, 2);
 	testNextDate( 1813, 7, 9 , 1813, 7, 10);
 	testNextDate( 2012, 6, 10 , 2012, 6, 11);	
-	testNextDate( 2011, 10, 20 , 2011, 10, 30);
+	testNextDate( 2011, 10, 20 , 2011, 10, 21);
 
 	//invalid testing
 	testInvalid(1811, 1, 1);
@@ -48,7 +52,7 @@ TEST(BoundaryTest, Day) {
         testNextDate( 1902 , 5, 31 , 1902, 6, 1);
         testNextDate( 1903 , 6, 30 , 1903, 7, 1);
 	testNextDate( 1904 , 7, 30 , 1904, 7, 31);
-	testNextDate( 1905 , 7, 1 , 1905, 8, 1);
+	testNextDate( 1905 , 7, 1 , 1905, 7, 2);
 
 	//invalid testing
 	testInvalid( 1975 , 1, 0);
