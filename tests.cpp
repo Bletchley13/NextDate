@@ -73,6 +73,22 @@ TEST(EquivalentClassTest, SmallMonthNormalYear)
         testInvalid( 1993 , 11, -1);
 }
 
+TEST(EdgeTest, SmallMonthNormalYear)
+{
+        testNextDate( 1863 , 4, 1 , 1863, 4, 2);
+        testNextDate( 1874 , 6, 2 , 1874, 6, 3);
+        testNextDate( 1875 , 9, 30, 1875, 10, 1);
+        testNextDate( 1973 , 11, 30 , 1913, 12, 1);
+        testNextDate( 1974 , 9, 29 , 1974, 9, 30);
+        testNextDate( 1975 , 6, 29, 1975, 6, 30);
+
+        //invalid testing
+        testInvalid( 1939 , 11, 31);
+        testInvalid( 1950 , 7, 0);
+        testInvalid( 1951 , 6, 31);
+        testInvalid( 1953 , 4, -1);
+}
+
 TEST(EquivalentClassTest, BigMonthNormalYear)
 {
 	testNextDate( 1851 , 1, 19 , 1851, 1, 20);
@@ -93,6 +109,20 @@ TEST(EquivalentClassTest, BigMonthNormalYear)
         testInvalid( 1959 , 12, 0);
 }
 
+TEST(EdgeTest, BigMonthNormalYear)
+{
+        testNextDate( 1851 , 1, 1 , 1851, 1, 2);
+        testNextDate( 1853 , 3, 2 , 1853, 3, 3);
+        testNextDate( 1854 , 5, 30 , 1854, 5, 31);
+        testNextDate( 1855 , 12, 31 , 1856, 1, 1);
+
+        //invalid testing
+        testInvalid( 2000 , 1, 32);
+        testInvalid( 2001 , 3, -1);
+        testInvalid( 2002 , 5, 32);
+}
+
+
 TEST(EquivalentClassTest, FebruaryNormalYear)
 {
 	testNextDate( 1971 , 2, 1 , 1971, 2, 2);
@@ -108,6 +138,23 @@ TEST(EquivalentClassTest, FebruaryNormalYear)
 	testInvalid( 1929 , 2, 30);
 }
 
+TEST(EdgeTest, FebruaryNormalYear)
+{
+        testNextDate( 1969 , 2, 1 , 1969, 2, 2);
+        testNextDate( 1973 , 2, 1 , 1973, 2, 2);
+        testNextDate( 1975 , 2, 28 , 1975, 3, 1);
+        testNextDate( 1977 , 2, 28 , 1977, 3, 1);
+	testNextDate( 1900 , 2, 28 , 1977, 3, 1);
+
+        //invalid testing
+        testInvalid( 1833 , 2, 0);
+        testInvalid( 1833 , 2, -1);
+        testInvalid( 1834 , 2, 29);
+        testInvalid( 1835 , 2, 30);
+	testInvalid( 1900 , 2, 29);
+}
+
+
 TEST(EquivalentClassTest, SmallMonthLeapYear)
 {
 	testNextDate( 1812 , 4, 5 , 1812, 4, 6);
@@ -122,6 +169,19 @@ TEST(EquivalentClassTest, SmallMonthLeapYear)
         testInvalid( 1990 , 6, 0);
         testInvalid( 1991 , 9, 31);
         testInvalid( 1993 , 11, -1);
+}
+
+TEST(EdgeTest, SmallMonthLeapYear)
+{
+        testNextDate( 1840 , 4, 1 , 1840, 4, 2);
+        testNextDate( 1844 , 6, 1 , 1844, 6, 2);
+        testNextDate( 1848 , 9, 30, 1848, 10, 1);
+        testNextDate( 1852 , 11, 30 , 1852, 12, 1);
+        testNextDate( 1856 , 6, 30 , 1856, 7, 1);
+
+        //invalid testing
+        testInvalid( 1960 , 4, 31);
+        testInvalid( 1964 , 6, 0);
 }
 
 TEST(EquivalentClassTest, BigMonthLeapYear)
@@ -140,6 +200,23 @@ TEST(EquivalentClassTest, BigMonthLeapYear)
         testInvalid( 1960 , 5, 32);
 }
 
+TEST(EdgeTest, BigMonthLeapYear)
+{
+        testNextDate( 1924 , 1, 3 , 1852, 1, 4);
+        testNextDate( 1856 , 3, 8 , 1856, 3, 9);
+        testNextDate( 1860 , 5, 13 , 1860, 5, 14);
+        testNextDate( 1864 , 7, 18 , 1864, 7, 19);
+        testNextDate( 1868 , 8, 23 , 1868, 8, 24);
+        testNextDate( 1872 , 10, 28 , 1872, 10, 29);
+        testNextDate( 1876 , 12, 31 , 1877, 1, 1);
+
+        //invalid testing
+        testInvalid( 1952 , 1, 0);
+        testInvalid( 1956 , 3, -1);
+        testInvalid( 1960 , 5, 32);
+}
+
+
 TEST(EquivalentClassTest, FebruaryLeapYear)
 {
 	testNextDate( 1972 , 2, 1 , 1972, 2, 2);
@@ -155,7 +232,19 @@ TEST(EquivalentClassTest, FebruaryLeapYear)
         testInvalid( 1940 , 2, 30);
 }
 
+TEST(EdgeTest, FebruaryLeapYear)
+{
+        testNextDate( 1992 , 2, 1 , 1992, 2, 2);
+        testNextDate( 1996 , 2, 1 , 1996, 2, 2);
+        testNextDate( 1984 , 2, 29 , 1984, 3, 1);
+        testNextDate( 1952 , 2, 29 , 1952, 3, 1);
+        testNextDate( 2000 , 2, 29 , 2000, 3, 1);
 
+        //invalid testing
+        testInvalid( 2000 , 2, 30);
+        testInvalid( 1936 , 2, 0);
+        testInvalid( 1980 , 2, 20);
+}
 
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
