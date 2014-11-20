@@ -49,9 +49,9 @@
             <td></td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">34</td>
+            <td class="headerCovTableEntry">40</td>
             <td class="headerCovTableEntry">50</td>
-            <td class="headerCovTableEntryLo">68.0 %</td>
+            <td class="headerCovTableEntryMed">80.0 %</td>
           </tr>
           <tr><td><img src="../../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -72,51 +72,51 @@
 <a name="1"><span class="lineNum">       1 </span>                :            : #include &lt;stdlib.h&gt;</a>
 <a name="2"><span class="lineNum">       2 </span>                :            : #include &quot;NextDate.h&quot;</a>
 <span class="lineNum">       3 </span>                :            : 
-<span class="lineNum">       4 </span>                :<span class="lineCov">          5 : int getYearType(Date *a)</span>
+<span class="lineNum">       4 </span>                :<span class="lineCov">          8 : int getYearType(Date *a)</span>
 <span class="lineNum">       5 </span>                :            : {
-<span class="lineNum">       6 </span>                :<span class="lineCov">          5 :         int year = a-&gt;year;</span>
-<span class="lineNum">       7 </span>[<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>][<span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 5 times"> + </span>]:<span class="lineCov">          5 :         if(year &gt; 2012 || year &lt; 1812)return INVALID;</span>
-<span class="lineNum">       8 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :         if( year % 400 == 0) return LEAPYEAR;</span>
-<span class="lineNum">       9 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          5 :         else if( year % 100 == 0) return NORMALYEAR;</span>
+<span class="lineNum">       6 </span>                :<span class="lineCov">          8 :         int year = a-&gt;year;</span>
+<span class="lineNum">       7 </span>[<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>][<span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchCov" title="Branch 3 was taken 7 times"> + </span>]:<span class="lineCov">          8 :         if(year &gt; 2012 || year &lt; 1812)return INVALID;</span>
+<span class="lineNum">       8 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 7 times"> + </span>]:<span class="lineCov">          7 :         if( year % 400 == 0) return LEAPYEAR;</span>
+<span class="lineNum">       9 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          7 :         else if( year % 100 == 0) return NORMALYEAR;</span>
 <span class="lineNum">      10 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          5 :         else if( year % 4 == 0) return LEAPYEAR;</span>
-<span class="lineNum">      11 </span>                :<span class="lineCov">          5 :         else return NORMALYEAR;</span>
+<span class="lineNum">      11 </span>                :<span class="lineCov">          8 :         else return NORMALYEAR;</span>
 <span class="lineNum">      12 </span>                :            : }
 <a name="13"><span class="lineNum">      13 </span>                :            : </a>
 <span class="lineNum">      14 </span>                :            : 
-<span class="lineNum">      15 </span>                :<span class="lineCov">          5 : int getMonthType(Date *a)</span>
+<span class="lineNum">      15 </span>                :<span class="lineCov">          8 : int getMonthType(Date *a)</span>
 <span class="lineNum">      16 </span>                :            : {
-<span class="lineNum">      17 </span>                :<span class="lineCov">          5 :         int month = a-&gt;month;</span>
-<span class="lineNum">      18 </span>[<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>][<span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 5 times"> + </span>]:<span class="lineCov">          5 :         if(month &lt; 1 || month &gt; 12) return INVALID;</span>
-<span class="lineNum">      19 </span>[<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>][<span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchCov" title="Branch 3 was taken 1 time"> + </span>]:<span class="lineCov">          5 :         if(month &lt; 8 &amp;&amp; month  == 2) return FEBUARY;</span>
-<span class="lineNum">      20 </span>[<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>][<span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          3 :         if( (month &lt; 8 &amp;&amp; month % 2 == 0) || (month &gt;= 8 &amp;&amp; month % 2 == 1) ) </span>
-<span class="lineNum">         </span>[<span class="branchCov" title="Branch 4 was taken 2 times"> + </span><span class="branchCov" title="Branch 5 was taken 1 time"> + </span>][<span class="branchCov" title="Branch 6 was taken 1 time"> + </span><span class="branchCov" title="Branch 7 was taken 1 time"> + </span>]
+<span class="lineNum">      17 </span>                :<span class="lineCov">          8 :         int month = a-&gt;month;</span>
+<span class="lineNum">      18 </span>[<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>][<span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchCov" title="Branch 3 was taken 7 times"> + </span>]:<span class="lineCov">          8 :         if(month &lt; 1 || month &gt; 12) return INVALID;</span>
+<span class="lineNum">      19 </span>[<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>][<span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchCov" title="Branch 3 was taken 1 time"> + </span>]:<span class="lineCov">          7 :         if(month &lt; 8 &amp;&amp; month  == 2) return FEBUARY;</span>
+<span class="lineNum">      20 </span>[<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>][<span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          5 :         if( (month &lt; 8 &amp;&amp; month % 2 == 0) || (month &gt;= 8 &amp;&amp; month % 2 == 1) ) </span>
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 4 was taken 4 times"> + </span><span class="branchCov" title="Branch 5 was taken 1 time"> + </span>][<span class="branchCov" title="Branch 6 was taken 1 time"> + </span><span class="branchCov" title="Branch 7 was taken 3 times"> + </span>]
 <span class="lineNum">      21 </span>                :<span class="lineCov">          1 :                 return SMALLMONTH;</span>
-<span class="lineNum">      22 </span>                :<span class="lineCov">          5 :         else return BIGMONTH; </span>
+<span class="lineNum">      22 </span>                :<span class="lineCov">          8 :         else return BIGMONTH; </span>
 <a name="23"><span class="lineNum">      23 </span>                :            : }</a>
 <span class="lineNum">      24 </span>                :            : 
-<span class="lineNum">      25 </span>                :<span class="lineCov">          5 : Date *NextDate(Date *argv)</span>
+<span class="lineNum">      25 </span>                :<span class="lineCov">          8 : Date *NextDate(Date *argv)</span>
 <span class="lineNum">      26 </span>                :            : {
-<span class="lineNum">      27 </span>                :<span class="lineCov">          5 :         Date *ret = (Date *)malloc(sizeof(Date));</span>
-<span class="lineNum">      28 </span>                :<span class="lineCov">          5 :         int yearType = getYearType(argv);</span>
-<span class="lineNum">      29 </span>                :<span class="lineCov">          5 :         int monthType = getMonthType(argv);</span>
+<span class="lineNum">      27 </span>                :<span class="lineCov">          8 :         Date *ret = (Date *)malloc(sizeof(Date));</span>
+<span class="lineNum">      28 </span>                :<span class="lineCov">          8 :         int yearType = getYearType(argv);</span>
+<span class="lineNum">      29 </span>                :<span class="lineCov">          8 :         int monthType = getMonthType(argv);</span>
 <span class="lineNum">      30 </span>                :            :         int maxDay;
-<span class="lineNum">      31 </span>                :<span class="lineCov">          5 :         int maxMonth = 12;</span>
+<span class="lineNum">      31 </span>                :<span class="lineCov">          8 :         int maxMonth = 12;</span>
 <span class="lineNum">      32 </span>                :            : 
-<span class="lineNum">      33 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">          5 :         if(monthType == BIGMONTH) maxDay = BIGMONTHMAX;</span>
-<span class="lineNum">      34 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          3 :         else if(monthType == SMALLMONTH) maxDay = SMALLMONTHMAX;</span>
-<span class="lineNum">      35 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          2 :         else if(yearType==LEAPYEAR) maxDay = LEAPFEBUARYMAX;</span>
-<span class="lineNum">      36 </span>                :<span class="lineCov">          1 :         else maxDay = NORMALFEBUARYMAX;</span>
+<span class="lineNum">      33 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">          8 :         if(monthType == BIGMONTH) maxDay = BIGMONTHMAX;</span>
+<span class="lineNum">      34 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">          4 :         else if(monthType == SMALLMONTH) maxDay = SMALLMONTHMAX;</span>
+<span class="lineNum">      35 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          3 :         else if(yearType==LEAPYEAR) maxDay = LEAPFEBUARYMAX;</span>
+<span class="lineNum">      36 </span>                :<span class="lineCov">          2 :         else maxDay = NORMALFEBUARYMAX;</span>
 <span class="lineNum">      37 </span>                :            : 
-<span class="lineNum">      38 </span>                :<span class="lineCov">          5 :         ret-&gt;year = argv-&gt;year;</span>
-<span class="lineNum">      39 </span>                :<span class="lineCov">          5 :         ret-&gt;month = argv-&gt;month;</span>
-<span class="lineNum">      40 </span>                :<span class="lineCov">          5 :         ret-&gt;day = argv-&gt;day;</span>
+<span class="lineNum">      38 </span>                :<span class="lineCov">          8 :         ret-&gt;year = argv-&gt;year;</span>
+<span class="lineNum">      39 </span>                :<span class="lineCov">          8 :         ret-&gt;month = argv-&gt;month;</span>
+<span class="lineNum">      40 </span>                :<span class="lineCov">          8 :         ret-&gt;day = argv-&gt;day;</span>
 <span class="lineNum">      41 </span>                :            : 
 <span class="lineNum">      42 </span>                :            : 
-<span class="lineNum">      43 </span>[<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>][<span class="branchCov" title="Branch 2 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          5 :         if(ret-&gt;day &gt; maxDay || ret-&gt;day &lt; 1|| yearType==INVALID || monthType == INVALID)</span>
-<span class="lineNum">         </span>[<span class="branchCov" title="Branch 4 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>][<span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 4 times"> + </span>]
+<span class="lineNum">      43 </span>[<span class="branchCov" title="Branch 0 was taken 7 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>][<span class="branchCov" title="Branch 2 was taken 6 times"> + </span><span class="branchCov" title="Branch 3 was taken 1 time"> + </span>]:<span class="lineCov">          8 :         if(ret-&gt;day &gt; maxDay || ret-&gt;day &lt; 1|| yearType==INVALID || monthType == INVALID)</span>
+<span class="lineNum">         </span>[<span class="branchCov" title="Branch 4 was taken 5 times"> + </span><span class="branchCov" title="Branch 5 was taken 1 time"> + </span>][<span class="branchCov" title="Branch 6 was taken 1 time"> + </span><span class="branchCov" title="Branch 7 was taken 4 times"> + </span>]
 <span class="lineNum">      44 </span>                :            :         {
-<span class="lineNum">      45 </span>                :<span class="lineCov">          1 :                 free(ret);</span>
-<span class="lineNum">      46 </span>                :<span class="lineCov">          1 :                 return NULL;</span>
+<span class="lineNum">      45 </span>                :<span class="lineCov">          4 :                 free(ret);</span>
+<span class="lineNum">      46 </span>                :<span class="lineCov">          4 :                 return NULL;</span>
 <span class="lineNum">      47 </span>                :            :         }
 <span class="lineNum">      48 </span>                :            : 
 <span class="lineNum">      49 </span>                :            : 
@@ -135,16 +135,16 @@
 <span class="lineNum">      62 </span>                :<span class="lineCov">          1 :                 ret-&gt;year += 1;</span>
 <span class="lineNum">      63 </span>                :            :         }
 <span class="lineNum">      64 </span>                :            : 
-<span class="lineNum">      65 </span>                :<span class="lineCov">          5 :         return ret;</span>
+<span class="lineNum">      65 </span>                :<span class="lineCov">          8 :         return ret;</span>
 <a name="66"><span class="lineNum">      66 </span>                :            : }  </a>
 <span class="lineNum">      67 </span>                :            : 
-<span class="lineNum">      68 </span>                :<span class="lineCov">          5 : Date *NewDateInstance(int year, int month, int day)</span>
+<span class="lineNum">      68 </span>                :<span class="lineCov">          8 : Date *NewDateInstance(int year, int month, int day)</span>
 <span class="lineNum">      69 </span>                :            : {
-<span class="lineNum">      70 </span>                :<span class="lineCov">          5 :         Date *ret = (Date *)malloc(sizeof(Date));</span>
-<span class="lineNum">      71 </span>                :<span class="lineCov">          5 :         ret-&gt;year = year;</span>
-<span class="lineNum">      72 </span>                :<span class="lineCov">          5 :         ret-&gt;month = month;</span>
-<span class="lineNum">      73 </span>                :<span class="lineCov">          5 :         ret-&gt;day = day;</span>
-<span class="lineNum">      74 </span>                :<span class="lineCov">          5 :         return ret;</span>
+<span class="lineNum">      70 </span>                :<span class="lineCov">          8 :         Date *ret = (Date *)malloc(sizeof(Date));</span>
+<span class="lineNum">      71 </span>                :<span class="lineCov">          8 :         ret-&gt;year = year;</span>
+<span class="lineNum">      72 </span>                :<span class="lineCov">          8 :         ret-&gt;month = month;</span>
+<span class="lineNum">      73 </span>                :<span class="lineCov">          8 :         ret-&gt;day = day;</span>
+<span class="lineNum">      74 </span>                :<span class="lineCov">          8 :         return ret;</span>
 <a name="75"><span class="lineNum">      75 </span>                :            : }</a>
 <span class="lineNum">      76 </span>                :            : 
 <span class="lineNum">      77 </span>                :<span class="lineNoCov">          0 : void ShowDate(Date* date)</span>

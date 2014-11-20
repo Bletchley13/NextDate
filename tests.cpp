@@ -250,13 +250,20 @@ TEST(EdgeTest, FebruaryLeapYear)
         testInvalid( 1980 , 2, 30);
 }
 
-TEST(C0Coverage, C0_1)
+TEST(Coverage, C0_1)
 {
 	testInvalid( 1992 , 1, 40);
 	testNextDate( 1996 , 2, 1 , 1996, 2, 2);
 	testNextDate( 1876 , 12, 31 , 1877, 1, 1);
         testNextDate( 1876 , 11, 30 , 1876, 12, 1);
 	testNextDate( 1997 , 2, 1 , 1997, 2, 2);
+}
+
+TEST(Coverage, C2_1)
+{
+	testInvalid( 1800 , 8, 1);
+	testInvalid( 1900 , 12, -1);
+	testInvalid( 1900 , 13, 1);
 }
 
 int main(int argc, char **argv) {

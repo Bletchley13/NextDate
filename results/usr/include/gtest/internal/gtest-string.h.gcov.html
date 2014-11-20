@@ -286,7 +286,7 @@
 <span class="lineNum">     215 </span>                :            : 
 <a name="216"><span class="lineNum">     216 </span>                :            :   // D'tor.  String is intended to be a final class, so the d'tor</a>
 <span class="lineNum">     217 </span>                :            :   // doesn't need to be virtual.
-<span class="lineNum">     218 </span>        [<span class="branchCov" title="Branch 0 was taken 234 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">        235 :   ~String() { delete[] c_str_; }</span>
+<span class="lineNum">     218 </span>        [<span class="branchCov" title="Branch 0 was taken 250 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">        251 :   ~String() { delete[] c_str_; }</span>
 <span class="lineNum">     219 </span>                :            : 
 <span class="lineNum">     220 </span>                :            :   // Allows a String to be implicitly converted to an ::std::string or
 <span class="lineNum">     221 </span>                :            :   // ::string, and vice versa.  Converting a String containing a NULL
@@ -343,7 +343,7 @@
 <span class="lineNum">     272 </span>                :            :   // Gets the 0-terminated C string this String object represents.
 <a name="273"><span class="lineNum">     273 </span>                :            :   // The String object still owns the string.  Therefore the caller</a>
 <span class="lineNum">     274 </span>                :            :   // should NOT delete the return value.
-<span class="lineNum">     275 </span>                :<span class="lineCov">        775 :   const char* c_str() const { return c_str_; }</span>
+<span class="lineNum">     275 </span>                :<span class="lineCov">        832 :   const char* c_str() const { return c_str_; }</span>
 <span class="lineNum">     276 </span>                :            : 
 <span class="lineNum">     277 </span>                :            :   // Assigns a C string to this object.  Self-assignment works.
 <span class="lineNum">     278 </span>                :            :   const String&amp; operator=(const char* a_c_str) {
@@ -370,13 +370,13 @@
 <span class="lineNum">     299 </span>                :            :   // function can only be called when c_str_ has not been allocated.
 <a name="300"><span class="lineNum">     300 </span>                :            :   // ConstructNonNull(NULL, 0) results in an empty string (&quot;&quot;).</a>
 <span class="lineNum">     301 </span>                :            :   // ConstructNonNull(NULL, non_zero) is undefined behavior.
-<span class="lineNum">     302 </span>                :<span class="lineCov">        244 :   void ConstructNonNull(const char* buffer, size_t a_length) {</span>
-<span class="lineNum">     303 </span>                :<span class="lineCov">        244 :     char* const str = new char[a_length + 1];</span>
-<span class="lineNum">     304 </span>                :<span class="lineCov">        244 :     memcpy(str, buffer, a_length);</span>
-<span class="lineNum">     305 </span>                :<span class="lineCov">        244 :     str[a_length] = '\0';</span>
-<span class="lineNum">     306 </span>                :<span class="lineCov">        244 :     c_str_ = str;</span>
-<span class="lineNum">     307 </span>                :<span class="lineCov">        244 :     length_ = a_length;</span>
-<span class="lineNum">     308 </span>                :<span class="lineCov">        244 :   }</span>
+<span class="lineNum">     302 </span>                :<span class="lineCov">        266 :   void ConstructNonNull(const char* buffer, size_t a_length) {</span>
+<span class="lineNum">     303 </span>                :<span class="lineCov">        266 :     char* const str = new char[a_length + 1];</span>
+<span class="lineNum">     304 </span>                :<span class="lineCov">        266 :     memcpy(str, buffer, a_length);</span>
+<span class="lineNum">     305 </span>                :<span class="lineCov">        266 :     str[a_length] = '\0';</span>
+<span class="lineNum">     306 </span>                :<span class="lineCov">        266 :     c_str_ = str;</span>
+<span class="lineNum">     307 </span>                :<span class="lineCov">        266 :     length_ = a_length;</span>
+<span class="lineNum">     308 </span>                :<span class="lineCov">        266 :   }</span>
 <span class="lineNum">     309 </span>                :            : 
 <span class="lineNum">     310 </span>                :            :   const char* c_str_;
 <span class="lineNum">     311 </span>                :            :   size_t length_;

@@ -333,16 +333,16 @@
 <span class="lineNum">     262 </span>                :            : //   Expected: Foo() is even
 <a name="263"><span class="lineNum">     263 </span>                :            : //     Actual: it's 5</a>
 <span class="lineNum">     264 </span>                :            : //
-<span class="lineNum">     265 </span>                :<span class="lineCov">         13 : class GTEST_API_ AssertionResult {</span>
+<span class="lineNum">     265 </span>                :<span class="lineCov">         16 : class GTEST_API_ AssertionResult {</span>
 <span class="lineNum">     266 </span>                :            :  public:
 <span class="lineNum">     267 </span>                :            :   // Copy constructor.
 <span class="lineNum">     268 </span>                :            :   // Used in EXPECT_TRUE/FALSE(assertion_result).
 <a name="269"><span class="lineNum">     269 </span>                :            :   AssertionResult(const AssertionResult&amp; other);</a>
 <span class="lineNum">     270 </span>                :            :   // Used in the EXPECT_TRUE/FALSE(bool_expression).
-<span class="lineNum">     271 </span>                :<span class="lineCov">         13 :   explicit AssertionResult(bool success) : success_(success) {}</span>
+<span class="lineNum">     271 </span>                :<span class="lineCov">         16 :   explicit AssertionResult(bool success) : success_(success) {}</span>
 <a name="272"><span class="lineNum">     272 </span>                :            : </a>
 <span class="lineNum">     273 </span>                :            :   // Returns true iff the assertion succeeded.
-<span class="lineNum">     274 </span>                :<span class="lineCov">         13 :   operator bool() const { return success_; }  // NOLINT</span>
+<span class="lineNum">     274 </span>                :<span class="lineCov">         16 :   operator bool() const { return success_; }  // NOLINT</span>
 <span class="lineNum">     275 </span>                :            : 
 <span class="lineNum">     276 </span>                :            :   // Returns the assertion's negation. Used with EXPECT/ASSERT_FALSE.
 <span class="lineNum">     277 </span>                :            :   AssertionResult operator!() const;
