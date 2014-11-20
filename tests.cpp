@@ -250,6 +250,15 @@ TEST(EdgeTest, FebruaryLeapYear)
         testInvalid( 1980 , 2, 30);
 }
 
+TEST(C0Coverage, C0_1)
+{
+	testInvalid( 1992 , 1, 40);
+	testNextDate( 1996 , 2, 1 , 1996, 2, 2);
+	testNextDate( 1876 , 12, 31 , 1877, 1, 1);
+        testNextDate( 1876 , 11, 30 , 1876, 12, 1);
+	testNextDate( 1997 , 2, 1 , 1997, 2, 2);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

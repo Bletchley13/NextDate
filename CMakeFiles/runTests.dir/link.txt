@@ -1,1 +1,1 @@
-/usr/bin/c++       CMakeFiles/runTests.dir/tests.cpp.o  -o runTests -rdynamic -Wl,-Bstatic -lgtest -Wl,-Bdynamic -lpthread libNextDate.a 
+/usr/bin/c++   -fprofile-arcs -ftest-coverage  -fprofile-arcs -ftest-coverage CMakeFiles/runTests.dir/tests.cpp.o  -o runTests -rdynamic -Wl,-Bstatic -lgtest -Wl,-Bdynamic -lpthread libNextDate.a 
